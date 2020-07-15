@@ -22,7 +22,7 @@ module Turnout
 
     def ip_allowed?(allowed_ips)
       begin
-        ip = IPAddr.new(rack_request.ip.to_s)
+        ip = IPAddr.new(rack_request.remote_ip.to_s)
       rescue ArgumentError
         return false
       end
